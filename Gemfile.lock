@@ -60,6 +60,9 @@ GEM
     bindex (0.5.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-sass (3.3.7)
+      autoprefixer-rails (>= 5.2.1)
+      sass (>= 3.3.4)
     brakeman (3.6.1)
     builder (3.2.3)
     bundler-audit (0.5.0)
@@ -382,6 +385,7 @@ DEPENDENCIES
   autoprefixer-rails
   better_errors
   binding_of_caller
+  bootstrap-sass
   brakeman
   bundler-audit
   byebug

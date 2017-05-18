@@ -6,7 +6,7 @@ class AccessGrant < ApplicationRecord
 
   class << self
     def prune!
-      delete_all(["created_at < ?", 3.days.ago])
+      where("created_at < ?", 3.days.ago).delete_all
     end
 
     def authenticate code, application_id

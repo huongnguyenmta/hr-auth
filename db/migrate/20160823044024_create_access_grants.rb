@@ -13,7 +13,7 @@ class CreateAccessGrants < ActiveRecord::Migration[5.1]
       t.timestamps
     end
 
-    add_index :access_grants, :user_id, unique: true
-    add_index :access_grants, :client_id, unique: true
+    add_index :access_grants, :user_id
+    add_index :access_grants, :client_id
   end
 end
