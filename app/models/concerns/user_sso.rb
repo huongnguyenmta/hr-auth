@@ -17,18 +17,10 @@ module UserSso
 
     def json_data
       {
-        id: id,
-        uid: uid,
         email: email,
-        avatar_url: "http://#{Settings.host}/#{avatar.url}",
-        join_date: join_date,
-        resigned_date: resigned_date,
-        display_name: display_name,
+        # avatar_url: "http://#{Settings.host}/#{avatar.url}",
+        name: name,
         authentication_token: authentication_token,
-        sync_token: sync_token,
-        info: {
-          position: position
-        }
       }
     end
   end

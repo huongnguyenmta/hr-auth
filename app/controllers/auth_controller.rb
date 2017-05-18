@@ -37,7 +37,7 @@ class AuthController < ApplicationController
 
   def me
     user = User.find_for_token_authentication params[:access_token]
-    user.generate_authentication_token!
+    user.authentication_token = User.generate_unique_secure_token.downcase!
     user.save
 
     if user.present?
