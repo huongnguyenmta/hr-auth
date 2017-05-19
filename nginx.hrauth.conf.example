@@ -1,0 +1,23 @@
+upstream hrauth_pro_puma {
+  server unix:///usr/local/rails_app/hr_auth/shared/tmp/sockets/puma.sock;
+}
+
+server {
+  listen 4000;
+  server_name 10.0.1.45;
+
+  root /usr/local/rails_app/hr_auth/current/public;
+  access_log /usr/local/rails_app/hr_auth/shared/log/nginx.access.log;
+  error_log /usr/local/rails_app/hr_auth/shared/log/nginx.error.log info;
+
+  try_files $uri/index.html $uri @hrauth_pro_puma;
+  location @hrauth_pro_puma {
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header Host $http_host;
+    proxy_redirect off;
+  }
+
+  error_page 500 502 503 504 /500.html;
+  client_max_body_size 10M;
+  keepalive_timeout 10;
+}
