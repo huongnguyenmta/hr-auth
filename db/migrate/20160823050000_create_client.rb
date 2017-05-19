@@ -5,8 +5,12 @@ class CreateClient < ActiveRecord::Migration[5.1]
       t.string :name
       t.string :app_id
       t.string :app_secret
+      t.integer :user_id
 
       t.timestamps
     end
+
+    add_index :clients, :user_id
+    add_index :clients, [:app_id, :app_secret], unique: true
   end
 end

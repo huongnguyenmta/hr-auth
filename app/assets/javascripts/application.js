@@ -12,3 +12,13 @@
 //
 //= require rails-ujs
 //= require_tree .
+
+window.onload = function() {
+  setTimeout(function () {
+    var flash = document.getElementById('flash-message');
+
+    if (flash !== null) {
+      flash.style.display = 'none';
+    }
+  }, 2000);
+}
