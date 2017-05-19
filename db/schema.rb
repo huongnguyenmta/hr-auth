@@ -39,8 +39,11 @@ ActiveRecord::Schema.define(version: 20170518123433) do
     t.string "name"
     t.string "app_id"
     t.string "app_secret"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["app_id", "app_secret"], name: "index_clients_on_app_id_and_app_secret", unique: true
+    t.index ["user_id"], name: "index_clients_on_user_id"
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

@@ -9,6 +9,10 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render "layouts/nav" %>
+    <div class="container clearfix main-container" role="main">
+      <%= render "shared/flash" %>
+      <%= yield %>
+    </div>
   </body>
 </html>

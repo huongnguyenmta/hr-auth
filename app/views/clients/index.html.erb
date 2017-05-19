@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <%= form_for Client.new do |f| %>
+      <div class="row">
+        <div class="col-md-10">
+          <%= f.text_field :name, class: "form-control", required: true,
+            placeholder: "Enter your client application name" %>
+        </div>
+        <div class="col-md-2">
+          <%= f.submit "Submit", class: "btn btn-primary" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="col-md-12">
+    <h2 class="text-center">List of your client</h2>
+    <table class="table table-hover table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Created At</th>
+          <th>Updated At</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @clients.each_with_index do |client, index| %>
+          <tr>
+            <td><%= index + 1 %></td>
+            <td><%= client.name %></td>
+            <td><%= l client.created_at, format: :long %></td>
+            <td><%= l client.updated_at, format: :long %></td>
+            <td>
+              <%= link_to "Show", client %> |
+              <%= link_to "Delete", client, method: :delete,
+                class: "text-danger",
+                data: {confirm: "Are you sure?"} %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
