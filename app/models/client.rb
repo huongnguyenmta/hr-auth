@@ -12,7 +12,7 @@ class Client < ActiveRecord::Base
   private
 
   def generate_app_id_and_secret
-    self.app_id = Client.generate_unique_secure_token
-    self.app_secret = SecureRandom.hex(30)
+    self.app_id = Client.generate_unique_secure_token if self.app_id.nil
+    self.app_secret = SecureRandom.hex(30) if self.app_secret.nil
   end
 end

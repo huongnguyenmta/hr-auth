@@ -14,6 +14,7 @@ gem "config"
 gem "devise"
 gem "bootstrap-sass"
 gem "cancancan"
+gem "carrierwave"
 
 group :development do
   gem "web-console", ">= 3.3.0"
