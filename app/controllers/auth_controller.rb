@@ -18,6 +18,7 @@ class AuthController < ApplicationController
     end
 
     access_grant = AccessGrant.authenticate(params[:code], application.id)
+
     if access_grant.nil?
       render json: {error: "Could not authenticate access code"}
       return
