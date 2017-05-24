@@ -14,9 +14,14 @@
  *= require_self
  */
 
-@import "bootstrap-sprockets";
-@import "bootstrap";
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
 
 .main-container {
   margin-top: 80px;
+}
+
+.btn,
+.form-control {
+  border-radius: 2px;
 }
