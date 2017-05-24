@@ -17,6 +17,7 @@ gem "cancancan"
 gem "carrierwave"
 gem "kaminari"
 gem "bootstrap-kaminari-views"
+gem "figaro"
 
 group :development do
   gem "web-console", ">= 3.3.0"
