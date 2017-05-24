@@ -15,6 +15,8 @@ gem "devise"
 gem "bootstrap-sass"
 gem "cancancan"
 gem "carrierwave"
+gem "kaminari"
+gem "bootstrap-kaminari-views"
 
 group :development do
   gem "web-console", ">= 3.3.0"

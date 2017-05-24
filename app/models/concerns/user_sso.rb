@@ -21,7 +21,6 @@ module UserSso
         avatar: "http://#{Settings.host}/#{avatar.url}",
         name: name,
         authentication_token: authentication_token,
-        uid: uid,
         gender: gender,
         role: role,
         birthday: birthday,

@@ -1,0 +1,30 @@
+<tr data-status="pagado">
+  <td>
+    <div class="ckbox">
+      <input type="checkbox" id="checkbox1">
+      <label for="checkbox1"></label>
+    </div>
+  </td>
+  <td>
+    <a href="javascript:;" class="star">
+      <i class="glyphicon glyphicon-star"></i>
+    </a>
+  </td>
+  <td>
+    <div class="media">
+      <a href="#" class="pull-left">
+        <%= image_tag user.avatar_url, class: "media-photo" %>
+      </a>
+      <div class="media-body">
+        <span class="media-meta pull-right">
+          <%= l user.join_date, format: :short if user.join_date %>
+        </span>
+        <h4 class="title">
+          <%= user.name %>
+          <span class="pull-right pagado">(<%= user.position || "Anything" %>)</span>
+        </h4>
+        <p class="summary"><%= l user.birthday, format: :short if user.birthday %></p>
+      </div>
+    </div>
+  </td>
+</tr>

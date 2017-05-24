@@ -47,18 +47,14 @@ ActiveRecord::Schema.define(version: 20170518123433) do
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string "title"
-    t.string "uid"
     t.string "authentication_token"
     t.string "name"
     t.integer "gender", default: 0
-    t.integer "role", default: 2
+    t.integer "role", default: 0
     t.date "birthday"
     t.string "employee_code"
     t.string "position"
     t.date "contract_date"
-    t.date "start_probation_date"
-    t.date "end_probation_date"
     t.integer "status", default: 0
     t.string "avatar"
     t.string "phone_number"
@@ -66,6 +62,10 @@ ActiveRecord::Schema.define(version: 20170518123433) do
     t.string "university"
     t.date "join_date"
     t.date "resigned_date"
+    t.string "workspace_name"
+    t.string "group_name"
+    t.string "team_name"
+    t.string "project_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email", default: "", null: false
@@ -81,7 +81,6 @@ ActiveRecord::Schema.define(version: 20170518123433) do
     t.index ["authentication_token"], name: "index_users_on_authentication_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    t.index ["uid"], name: "index_users_on_uid", unique: true
   end
 
 end

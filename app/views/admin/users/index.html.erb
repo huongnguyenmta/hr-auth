@@ -1,0 +1,19 @@
+<div class="row">
+  <section class="content">
+    <h1>Users</h1>
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="table-container">
+            <table class="table table-filter">
+              <tbody>
+                <%= render partial: "user", collection: @users %>
+              </tbody>
+            </table>
+            <%= paginate @users, theme: "twitter-bootstrap-3" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

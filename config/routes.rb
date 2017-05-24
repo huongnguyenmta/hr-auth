@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  authenticated :user do
+  authenticated :user, lambda {|u| u.admin?} do
+    root "admin/users#index"
+  end
+
+  authenticated :user, lambda {|u| u.normal?} do
     root "clients#index"
   end
 
@@ -16,4 +20,9 @@ Rails.application.routes.draw do
   get "/me" => "auth#me"
 
   resources :clients, only: [:index, :create, :show, :destroy]
+
+  namespace :admin do
+    root "users#index"
+    resources :users
+  end
 end
