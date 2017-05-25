@@ -1,0 +1,109 @@
+<div class="row">
+  <div class="update-profile col-xs-12">
+    <%= form_for object do |f| %>
+      <h1>Update My Account</h1>
+      <%= link_to "Change your password", edit_user_registration_path %>
+      <%= render "shared/error_messages", object: f.object %>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= f.label :name %>
+            <%= f.text_field :name, disabled: true, class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :email %>
+            <%= f.email_field :email, disabled: true, class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :avatar %>
+
+            <div class="upload-image">
+              <%= image_tag object.avatar_url, size: 109,
+                class: "img-thumbnail logo-preview" %>
+              <span class="btn btn-default btn-file">
+                <%= f.file_field :avatar, class: "logo-upload",
+                  accept: "image/png, image/gif, image/jpeg" %>
+                <i class="fa fa-camera" aria-hidden="true"></i>
+              </span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :birthday %>
+            <%= f.text_field :chatwork_id, class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :employee_code %>
+            <%= f.text_field :employee_code, disabled: true, class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :position %>
+            <%= f.text_field :position, disabled: true, class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :contract_date %>
+            <%= f.text_field :contract_date, disabled: true, class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :university %>
+            <%= f.text_field :university, class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= f.label :phone_number %>
+            <%= f.text_field :phone_number, class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :team_name %>
+            <%= f.text_field :team_name, class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :group_name %>
+            <%= f.text_field :group_name, class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :division_name %>
+            <%= f.text_field :division_name, class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :workspace_name %>
+            <%= f.text_field :workspace_name, class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :project_name %>
+            <%= f.text_field :project_name, class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :github_account %>
+            <%= f.text_field :github_account, class: "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :chatwork_id %>
+            <%= f.text_field :chatwork_id, class: "form-control" %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

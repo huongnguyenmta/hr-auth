@@ -125,3 +125,36 @@
 .table-filter tr td:nth-child(2) {
   width: 35px;
 }
+
+.upload-image {
+  height: 109px;
+  width: 109px;
+ .btn-file {
+    background-color: #46484a;
+    border: 0;
+    border-radius: 4px;
+    display: none;
+    font-size: 45px;
+    height: 144px;
+    line-height: 137px;
+    opacity: .8;
+    overflow: hidden;
+    position: relative;
+    width: 144px;
+  }
+  .logo-upload {
+    background: #fff;
+    cursor: inherit;
+    display: block;
+    filter: alpha(opacity=0);
+    font-size: 100px;
+    min-height: 100%;
+    min-width: 100%;
+    opacity: 0;
+    outline: none;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    top: 0;
+  }
+}

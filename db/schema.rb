@@ -64,8 +64,11 @@ ActiveRecord::Schema.define(version: 20170518123433) do
     t.date "resigned_date"
     t.string "workspace_name"
     t.string "group_name"
+    t.string "division_name"
     t.string "team_name"
     t.string "project_name"
+    t.string "chatwork_id"
+    t.string "github_account"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email", default: "", null: false

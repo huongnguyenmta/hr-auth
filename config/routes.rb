@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :skip => [:registrations]
+  as :user do
+    get "users/edit" => "devise/registrations#edit", as: "edit_user_registration"
+    put "users" => "devise/registrations#update", as: "user_registration"
+  end
 
   authenticated :user, lambda {|u| u.admin?} do
     root "admin/users#index"
@@ -20,6 +24,7 @@ Rails.application.routes.draw do
   get "/me" => "auth#me"
 
   resources :clients, only: [:index, :create, :show, :destroy]
+  resources :users, only: [:show, :update]
 
   namespace :admin do
     root "users#index"
