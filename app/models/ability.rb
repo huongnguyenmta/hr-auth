@@ -8,7 +8,7 @@ class Ability
       can :manage, :all
     elsif user.normal?
       can :manage, Client, user_id: user.id
-      cannot :manage, User
+      can [:show, :update], User, id: user.id
     else
       cannot :read, :all
     end

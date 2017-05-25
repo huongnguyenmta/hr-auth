@@ -18,8 +18,11 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.date :resigned_date
       t.string :workspace_name
       t.string :group_name
+      t.string :division_name
       t.string :team_name
       t.string :project_name
+      t.string :chatwork_id
+      t.string :github_account
 
       t.timestamps
     end

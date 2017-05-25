@@ -12,8 +12,7 @@ class User < ApplicationRecord
 
   enum role: [:normal, :admin]
 
-  ATTRIBUTES_PARAMS = [:name, :gender, :role, :birthday, :employee_code,
-    :position, :contract_date, :status, :avatar, :phone_number, :contract_type,
-    :university, :join_date, :resigned_date, :workspace_name, :group_name,
-    :team_name, :project_name, :email].freeze
+  ATTRIBUTES_PARAMS = [:gender, :birthday, :position, :status, :avatar,
+    :phone_number, :university, :workspace_name, :group_name, :division_name,
+    :team_name, :project_name, :github_account, :chatwork_id].freeze
 end
