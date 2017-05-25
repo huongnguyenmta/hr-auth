@@ -18,6 +18,7 @@ gem "carrierwave"
 gem "kaminari"
 gem "bootstrap-kaminari-views"
 gem "figaro"
+gem "activerecord-import"
 
 group :development do
   gem "web-console", ">= 3.3.0"

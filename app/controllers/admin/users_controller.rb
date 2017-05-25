@@ -10,7 +10,10 @@ class Admin::UsersController < Admin::BaseController
 
   def create
     if @user.save
+      flash[:success] = "Create success"
+      redirect_to users_path
     else
+      render :new
     end
   end
 
@@ -19,7 +22,10 @@ class Admin::UsersController < Admin::BaseController
 
   def update
     if @user.update user_params
+      flash[:success] = "Update success"
+      redirect_to users_path
     else
+      render :edit
     end
   end
 
